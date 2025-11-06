@@ -1,68 +1,139 @@
-/* === assets/style.css === */
+/* ===============================
+   STILE BASE - TEMA CHIARO
+   =============================== */
 
-/* ---------- TITOLI E TESTO ---------- */
-.main-header {
-	font-size: 2.5rem;
-	font-weight: bold;
-	color: #1f77b4;
-	text-align: center;
-	margin-bottom: 2rem;
-}
-.section-header {
-	font-size: 1.5rem;
-	font-weight: bold;
-	color: #000000 !important;
-	margin: 1rem 0;
-	background-color: transparent !important;
+/* Struttura generale */
+.stApp {
+    background-color: #F7F9FB;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    color: #222;
 }
 
-/* ---------- BOX COLORATI ---------- */
-div.result-box {
-	background-color: #f0f8ff !important;
-	padding: 1rem;
-	border-radius: 0.5rem;
-	border-left: 4px solid #1f77b4;
-	margin: 1rem 0;
-}
-div.warning-box {
-	background-color: #fff3cd !important;
-	padding: 1rem;
-	border-radius: 0.5rem;
-	border-left: 4px solid #ffc107;
-	margin: 1rem 0;
-}
-div.success-box {
-	background-color: #d1edff !important;
-	padding: 1rem;
-	border-radius: 0.5rem;
-	border-left: 4px solid #28a745;
-	margin: 1rem 0;
-}
-div.error-box {
-	background-color: #f8d7da !important;
-	padding: 1rem;
-	border-radius: 0.5rem;
-	border-left: 4px solid #dc3545;
-	margin: 1rem 0;
+/* Container principale */
+section.main div.block-container {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    background: transparent;
 }
 
-/* ---------- BLOCCO DARK MODE ---------- */
-:root {
-	color-scheme: light !important;
+/* Titoli */
+h1, h2, h3 {
+    text-align: center;
+    font-weight: 600;
+    color: #003366;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
-/* Testo nero ovunque, ma NON toccare i background dei box */
-html, body, [class*="css"], h1, h2, h3, h4, h5, h6, p, span {
-	color: #000000 !important;
-	background-color: #ffffff !important;
+/* Metriche */
+[data-testid="stMetricValue"] {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #222 !important;
+    background: transparent !important;
 }
 
-/* Reimposta i colori dei box dopo il reset */
-[class*="result-box"], [class*="warning-box"], [class*="success-box"], [class*="error-box"] {
-	background-color: revert !important;
+[data-testid="stMetricDelta"] {
+    font-size: 1rem;
+    background: transparent !important;
 }
 
-/* Forza Safari a non invertire i colori del testo */
-* {
-	-webkit-text-fill-color: #000000 !important;
+/* Pulsanti */
+button[kind="primary"] {
+    background-color: #0078d7 !important;
+    color: white !important;
+    border-radius: 8px !important;
+    border: none !important;
+    transition: background-color 0.2s ease-in-out;
+}
+button[kind="primary"]:hover {
+    background-color: #005fa3 !important;
+}
+
+/* Alert (info, success, error) */
+div.stAlert {
+    border-radius: 10px !important;
+    border: 1px solid rgba(0,0,0,0.1);
+    background-color: #f0f4fa !important;
+}
+div.stAlert p {
+    color: #222 !important;
+    background: transparent !important;
+}
+
+/* Rimuove sfondi bianchi indesiderati */
+div[data-testid="stMarkdownContainer"],
+div[data-testid="stMarkdown"],
+div[data-testid="stMetricValue"],
+div[data-testid="stMetricDelta"] {
+    background-color: transparent !important;
+}
+
+/* Tabelle e testo */
+.stDataFrame, .stMarkdown, .stText {
+    background-color: transparent !important;
+    color: #222 !important;
+}
+
+/* Separatori */
+hr {
+    border: 1px solid #ccc;
+    margin: 1.5rem 0;
+}
+
+/* === Mobile responsive === */
+@media (max-width: 768px) {
+    h1 { font-size: 1.6rem; }
+    h2 { font-size: 1.3rem; }
+    [data-testid="stMetricValue"] {
+        font-size: 1.3rem;
+    }
+}
+
+/* ===============================
+   TEMA SCURO (dark mode device)
+   =============================== */
+@media (prefers-color-scheme: dark) {
+    .stApp {
+        background-color: #0E1117 !important;
+        color: #FAFAFA !important;
+    }
+
+    h1, h2, h3 {
+        color: #4A90E2 !important;
+    }
+
+    div[data-testid="stMarkdownContainer"],
+    div[data-testid="stMarkdown"],
+    div[data-testid="stMetricValue"],
+    div[data-testid="stMetricDelta"] {
+        color: #FAFAFA !important;
+        background-color: transparent !important;
+    }
+
+    div.stAlert {
+        background: rgba(255,255,255,0.08) !important;
+        border: 1px solid rgba(255,255,255,0.15);
+        color: #FAFAFA !important;
+    }
+
+    button[kind="primary"] {
+        background-color: #2E7DD7 !important;
+        color: white !important;
+    }
+    button[kind="primary"]:hover {
+        background-color: #1E5EA8 !important;
+    }
+
+    [data-testid="stMetricValue"] {
+        color: #FFFFFF !important;
+    }
+
+    [data-testid="stMetricDelta"] {
+        color: #B0CFFF !important;
+    }
+
+    hr {
+        border-color: rgba(255,255,255,0.2);
+    }
 }
