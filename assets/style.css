@@ -1,0 +1,68 @@
+/* === assets/style.css === */
+
+/* ---------- TITOLI E TESTO ---------- */
+.main-header {
+	font-size: 2.5rem;
+	font-weight: bold;
+	color: #1f77b4;
+	text-align: center;
+	margin-bottom: 2rem;
+}
+.section-header {
+	font-size: 1.5rem;
+	font-weight: bold;
+	color: #000000 !important;
+	margin: 1rem 0;
+	background-color: transparent !important;
+}
+
+/* ---------- BOX COLORATI ---------- */
+div.result-box {
+	background-color: #f0f8ff !important;
+	padding: 1rem;
+	border-radius: 0.5rem;
+	border-left: 4px solid #1f77b4;
+	margin: 1rem 0;
+}
+div.warning-box {
+	background-color: #fff3cd !important;
+	padding: 1rem;
+	border-radius: 0.5rem;
+	border-left: 4px solid #ffc107;
+	margin: 1rem 0;
+}
+div.success-box {
+	background-color: #d1edff !important;
+	padding: 1rem;
+	border-radius: 0.5rem;
+	border-left: 4px solid #28a745;
+	margin: 1rem 0;
+}
+div.error-box {
+	background-color: #f8d7da !important;
+	padding: 1rem;
+	border-radius: 0.5rem;
+	border-left: 4px solid #dc3545;
+	margin: 1rem 0;
+}
+
+/* ---------- BLOCCO DARK MODE ---------- */
+:root {
+	color-scheme: light !important;
+}
+
+/* Testo nero ovunque, ma NON toccare i background dei box */
+html, body, [class*="css"], h1, h2, h3, h4, h5, h6, p, span {
+	color: #000000 !important;
+	background-color: #ffffff !important;
+}
+
+/* Reimposta i colori dei box dopo il reset */
+[class*="result-box"], [class*="warning-box"], [class*="success-box"], [class*="error-box"] {
+	background-color: revert !important;
+}
+
+/* Forza Safari a non invertire i colori del testo */
+* {
+	-webkit-text-fill-color: #000000 !important;
+}
