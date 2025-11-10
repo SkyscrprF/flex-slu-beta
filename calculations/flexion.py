@@ -3,9 +3,10 @@ import numpy as np
 from utils.helpers import find_neutral_axis, steel_stress
 
 def calc_flexural_capacity(B, H, c, n_inf, phi_inf, n_sup, phi_sup,
-                           fck, fyk, M_Ed, gamma_c=1.5, gamma_s=1.15):
+                           fck, fyk, M_Ed, gamma_c=1.5, gamma_s=1.15,
+                           alpha_cc=0.85):
     """Calcolo completo della resistenza a flessione MRd"""
-    fcd = fck / gamma_c
+    fcd = alpha_cc * fck / gamma_c
     fyd = fyk / gamma_s
     d = H - c
     d_sup = c
